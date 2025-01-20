@@ -6,7 +6,7 @@ const PaginationComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
+        "https://jsonplaceholder.typicode.com/posts=10"
       );
       const result = await response.json();
       console.log("result...", result);
@@ -18,6 +18,7 @@ const PaginationComponent = () => {
   return (
     <div>
       <h2>Pagination Components...</h2>
+      <h2>{JSON.stringify(data)}</h2>
     </div>
   );
 };
