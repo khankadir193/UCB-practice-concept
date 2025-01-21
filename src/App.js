@@ -5,6 +5,7 @@ import PaginationComponent from "./Components/PaginationComponent";
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import HomeComponent from "./Route.js/HomeComponent";
 import AboutComponent from "./Route.js/AboutComponent";
+import Dashboard from "./Route.js/Dashboard";
 
 function App() {
   return (
@@ -13,8 +14,7 @@ function App() {
       {/* <PaginationComponent /> */}
       <BrowserRouter>
           <Routes>
-            <Route path="/" element={<HomeComponent />} />
-            <Route path="/about" element={<AboutComponent />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
       </BrowserRouter>
     </div>
