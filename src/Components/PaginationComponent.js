@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const PaginationComponent = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5); // Number of items per page
+  const [itemsPerPage] = useState(10); // Number of items per page
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,8 +11,9 @@ const PaginationComponent = () => {
       const result = await response.json();
       setData(result);
     };
+    console.log('useEffect calling');
     fetchData();
-  }, []);
+  }, [currentPage]);
 
   // Calculate pagination values
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -29,9 +30,9 @@ const PaginationComponent = () => {
     <div>
       <h2>Pagination Component</h2>
       <ul>
-        {currentItems.map((item) => (
+        {currentItems.map((item,indx) => (
           <li key={item.id}>
-            <strong>{item.title}</strong>
+            <strong>{indx+1}-{item.title}</strong>
             <p>{item.body}</p>
           </li>
         ))}
