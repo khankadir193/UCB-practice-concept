@@ -7,22 +7,33 @@ const PaginationComponent = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users"
+      );
       const result = await response.json();
+      // console.log("result...", result);
       setData(result);
     };
     console.log('useEffect calling');
     fetchData();
-  }, [currentPage]);
+  }, []);
 
   // Calculate pagination values
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
+  console.log('indexOfLastItem....???',indexOfLastItem);
+  console.log('indexOfFirstItem....???',indexOfFirstItem);
+  console.log('currentItems....???',currentItems);
+
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = async (pageNumber) => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const result = await response.json();
+    console.log("result...", result);
+    setData(result);
     setCurrentPage(pageNumber);
   };
 
@@ -30,17 +41,21 @@ const PaginationComponent = () => {
     <div>
       <h2>Pagination Component</h2>
       <ul>
-        {currentItems.map((item,indx) => (
+        {currentItems.map((item, indx) => (
           <li key={item.id}>
-            <strong>{indx+1}-{item.title}</strong>
-            <p>{item.body}</p>
+            <strong>
+              {indx + 1}-{item.name}
+            </strong>
+            <p>{item.website}</p>
           </li>
         ))}
       </ul>
 
       {/* Pagination Controls */}
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
-        {Array.from({ length: totalPages }, (_, index) => (
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+      >
+        {Array.from({ length: 10 }, (_, index) => (
           <button
             key={index}
             onClick={() => handlePageChange(index + 1)}
@@ -48,7 +63,8 @@ const PaginationComponent = () => {
             style={{
               margin: "0 5px",
               padding: "10px",
-              backgroundColor: currentPage === index + 1 ? "#007bff" : "#f8f9fa",
+              backgroundColor:
+                currentPage === index + 1 ? "#007bff" : "#f8f9fa",
               color: currentPage === index + 1 ? "#fff" : "#000",
               border: "1px solid #ddd",
               borderRadius: "5px",

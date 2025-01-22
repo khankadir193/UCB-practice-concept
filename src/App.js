@@ -14,8 +14,9 @@ function App() {
   return (
     <div className="App">
       {/* <DebounceComponent />  */}
-      {/* <PaginationComponent /> */}
-      <BrowserRouter>
+      <PaginationComponent />
+      {/* implementation authorized routing */}
+      {/* <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomeComponent />} />
             <Route path="/about" element={<AboutComponent />} />
@@ -24,7 +25,7 @@ function App() {
             } />
             <Route path="/unauthorized" element={<Unauthorized />}  />
           </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
