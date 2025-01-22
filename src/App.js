@@ -6,15 +6,23 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import HomeComponent from "./Route.js/HomeComponent";
 import AboutComponent from "./Route.js/AboutComponent";
 import Dashboard from "./Route.js/Dashboard";
+import RoleBasedRoute from "./Route.js/RoleBasedRoute";
+import Unauthorized from "./Route.js/Unauthorized";
 
 function App() {
+  const userRole = 'user';
   return (
     <div className="App">
       {/* <DebounceComponent />  */}
       {/* <PaginationComponent /> */}
       <BrowserRouter>
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<HomeComponent />} />
+            <Route path="/about" element={<AboutComponent />} />
+            <Route path="/dashboard" element={
+              <RoleBasedRoute element={<Dashboard />} allowedRoles={["admin"]} userRole={userRole} />
+            } />
+            <Route path="/unauthorized" element={<Unauthorized />}  />
           </Routes>
       </BrowserRouter>
     </div>
