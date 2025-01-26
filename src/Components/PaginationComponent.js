@@ -1,45 +1,48 @@
 import React, { useEffect, useState } from "react";
 
 const PaginationComponent = () => {
+  const [dataCache] = useState(new Map()); // Cache for API data
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10); // Number of items per page
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      const result = await response.json();
-      // console.log("result...", result);
-      setData(result);
-    };
-    console.log('useEffect calling');
-    fetchData();
+    // Fetch data for the initial page on mount
+    handlePageChange(currentPage);
   }, []);
+
+  const fetchData = async (pageNumber) => {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/users?page=${pageNumber}`
+    );
+    const result = await response.json();
+    return result;
+  };
+
+  const handlePageChange = async (pageNumber) => {
+    setCurrentPage(pageNumber);
+
+    if (dataCache.has(pageNumber)) {
+      // Use cached data if available
+      setData(dataCache.get(pageNumber));
+    } else {
+      // Fetch data and cache it
+      const result = await fetchData(pageNumber);
+      dataCache.set(pageNumber, result);
+      setData(result);
+    }
+  };
 
   // Calculate pagination values
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
-  console.log('indexOfLastItem....???',indexOfLastItem);
-  console.log('indexOfFirstItem....???',indexOfFirstItem);
-  console.log('currentItems....???',currentItems);
-
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-
-  const handlePageChange = async (pageNumber) => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const result = await response.json();
-    console.log("result...", result);
-    setData(result);
-    setCurrentPage(pageNumber);
-  };
+  const totalPages = Math.ceil(100 / itemsPerPage); // Assuming 100 total items
 
   return (
     <div>
-      <h2>Pagination Component</h2>
+      <h2>Pagination Component with Caching</h2>
       <ul>
         {currentItems.map((item, indx) => (
           <li key={item.id}>
@@ -55,7 +58,7 @@ const PaginationComponent = () => {
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
       >
-        {Array.from({ length: 10 }, (_, index) => (
+        {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
             onClick={() => handlePageChange(index + 1)}
