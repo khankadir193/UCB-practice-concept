@@ -18,6 +18,7 @@ import RoleBasedRoute from "./Route.js/RoleBasedRoute";
 import Unauthorized from "./Route.js/Unauthorized";
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { LoginCallback, Security } from "@okta/okta-react";
+import AnnouncementTab from "./AnnoucementComponent/AnnoucementComp";
 
 const oktaAuth = new OktaAuth({
   issuer: "https://{yourOktaDomain}/oauth2/default",
@@ -29,10 +30,10 @@ const oktaAuth = new OktaAuth({
 function App() {
   const userRole = "admin";
 
-  const history = useNavigate();
-  const restoreOriginalUri = (_oktaAuth, originalUri) => {
-    history.replace(toRelativeUrl(originalUri || "/", window.location.origin));
-  };
+  // const history = useNavigate();
+  // const restoreOriginalUri = (_oktaAuth, originalUri) => {
+  //   history.replace(toRelativeUrl(originalUri || "/", window.location.origin));
+  // };
 
   return (
     <div className="App">
@@ -58,6 +59,7 @@ function App() {
           {/* </Routes> */}
         {/* // </Security> */}
       {/* // </BrowserRouter> */}
+      <AnnouncementTab />
     </div>
   );
 }
