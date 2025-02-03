@@ -19,6 +19,7 @@ import Unauthorized from "./Route.js/Unauthorized";
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { LoginCallback, Security } from "@okta/okta-react";
 import AnnouncementTab from "./AnnoucementComponent/AnnoucementComp";
+import { useCallback } from "react";
 
 const oktaAuth = new OktaAuth({
   issuer: "https://{yourOktaDomain}/oauth2/default",
@@ -29,11 +30,15 @@ const oktaAuth = new OktaAuth({
 
 function App() {
   const userRole = "admin";
+  const navigate = useNavigate();
 
-  // const history = useNavigate();
-  // const restoreOriginalUri = (_oktaAuth, originalUri) => {
-  //   history.replace(toRelativeUrl(originalUri || "/", window.location.origin));
-  // };
+  const restoreOriginalUri = useCallback(
+    (_oktaAuth, originalUri) => {
+      const relativeUri = toRelativeUrl(originalUri || "/", window.location.origin);
+      navigate(relativeUri, { replace: true });
+    },
+    [navigate]
+  );
 
   return (
     <div className="App">
@@ -52,14 +57,16 @@ function App() {
       </BrowserRouter> */}
       {/* okta authentication */}
       {/* <BrowserRouter> */}
-        {/* <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}> */}
-          {/* <Routes> */}
-            {/* <Route path="/" exact component={Home}/> */}
-            {/* <Route path="/login/callback" component={LoginCallback}/> */}
-          {/* </Routes> */}
-        {/* // </Security> */}
-      {/* // </BrowserRouter> */}
-      <AnnouncementTab />
+        <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
+          <Routes>
+            <Route path="/" element={<HomeComponent />} />
+            {/* <Route path="/login/callback" element={<LoginCallback />} /> */}
+            {/* <Route path="*" element={<Navigate to="/" />} />{" "} */}
+            {/* Handles unknown routes */}
+          </Routes>
+        </Security>
+      {/* </BrowserRouter> */}
+      {/* <AnnouncementTab /> */}
     </div>
   );
 }
