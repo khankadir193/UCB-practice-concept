@@ -20,10 +20,12 @@ import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
 import { LoginCallback, Security } from "@okta/okta-react";
 import AnnouncementTab from "./AnnoucementComponent/AnnoucementComp";
 import { useCallback } from "react";
+import SignComponent from "./OktaAuthentication/SignComponent";
+// import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
   issuer: "https://{yourOktaDomain}/oauth2/default",
-  clientId: "{yourClientID}",
+  clientId: "0oajxxgb8elfrRW4G5d7",
   redirectUri: window.location.origin + "/login/callback",
   scopes: ["openid", "profile", "email", "offline_access"],
 });
@@ -60,6 +62,7 @@ function App() {
         <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
           <Routes>
             <Route path="/" element={<HomeComponent />} />
+            <Route path="/login" element={<SignComponent />} />
             {/* <Route path="/login/callback" element={<LoginCallback />} /> */}
             {/* <Route path="*" element={<Navigate to="/" />} />{" "} */}
             {/* Handles unknown routes */}
