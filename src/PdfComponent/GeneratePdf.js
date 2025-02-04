@@ -6,14 +6,21 @@ import "jspdf-autotable";
 import React, { useRef } from "react";
 import GenerateReportTable from "./PdfTable";
 
-
 const columns = [
   { field: "mainPortNumber", headerName: "Main Port #", width: 130 },
   { field: "borrowerName", headerName: "Borrower Name", width: 250 },
   { field: "location", headerName: "Location", width: 130 },
   { field: "preparedDate", headerName: "Prepared Date", width: 130 },
-  { field: "originalLoanOfficer", headerName: "Original Loan Officer", width: 180 },
-  { field: "currentLoanOfficer", headerName: "Current Loan Officer", width: 180 },
+  {
+    field: "originalLoanOfficer",
+    headerName: "Original Loan Officer",
+    width: 180,
+  },
+  {
+    field: "currentLoanOfficer",
+    headerName: "Current Loan Officer",
+    width: 180,
+  },
   {
     field: "status",
     headerName: "Status",
@@ -24,7 +31,11 @@ const columns = [
         assigned: "text-orange-500",
         submitted: "text-purple-500",
       };
-      return <span className={statusColors[params.value.toLowerCase()] || ""}>{params.value}</span>;
+      return (
+        <span className={statusColors[params.value.toLowerCase()] || ""}>
+          {params.value}
+        </span>
+      );
     },
   },
   {
@@ -83,18 +94,31 @@ const GeneratePdf = () => {
   const handleGeneratePDF = () => {
     const doc = new jsPDF();
     const tableColumn = columns.map((col) => col.headerName);
-    const tableRows = rows.map((row) => columns.map((col) => row[col.field] || ""));
-    
+    const tableRows = rows.map((row) =>
+      columns.map((col) => row[col.field] || "")
+    );
+
     doc.autoTable({ head: [tableColumn], body: tableRows, startY: 20 });
     doc.save("report.pdf");
+  };
+
+  const handlePrint = () => {
+    window.print();
   };
 
   return (
     <>
       <GenerateReportTable ref={tableRef} columns={columns} rows={rows} />
       <div className="mt-5 flex justify-center gap-5 w-full p-5 border-t">
-        <Button variant="contained" color="secondary" onClick={handleGeneratePDF}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={handleGeneratePDF}
+        >
           Generate PDF
+        </Button>
+        <Button variant="contained" color="secondary" onClick={handlePrint}>
+          Print
         </Button>
       </div>
     </>
