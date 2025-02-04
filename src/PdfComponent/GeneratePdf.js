@@ -1,10 +1,22 @@
 import { Button } from "@mui/material";
 import React from "react";
 import GenerateReportTable from "./PdfTable";
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 const GeneratePdf = () => {
   const handleGeneratePDF = () => {
     // Generate PDF logic
+    const doc = new jsPDF();
+    doc.autoPdfTable({html : '#report-table'});
+    // const tableColumn = ["ID", "Name", "Age", "Country"];
+    // const tableRows = [
+    //   [1, "Abdul Kadir Khan", 25, "USA"],
+    //   [2, "Abdul Jabir Khan", 24, "UK"],
+    //   [3, "Abdul Hameed Khan", 48, "Canada"],
+    // ];
+    // doc.autoTable(tableColumn, tableRows, { startY: 20 });
+    doc.save("report.pdf");
     console.log("Generate PDF");
   };
 
