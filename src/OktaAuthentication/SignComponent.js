@@ -9,6 +9,8 @@ const SignComponent = () => {
   if (!authState) return null;
 
   const handleLogin = async () => {
+    console.log('authenticated...//',oktaAuth.isAuthenticated);
+    console.log('authState...//',authState);
     if(!authState || !oktaAuth.isAuthenticated){
         await oktaAuth.signInWithRedirect();
     }else{

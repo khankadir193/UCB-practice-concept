@@ -24,7 +24,7 @@ import SignComponent from "./OktaAuthentication/SignComponent";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
-  issuer: "https://{yourOktaDomain}/oauth2/default",
+  issuer: "https://dev-88895689.okta.com/oauth2/default",
   clientId: "0oajxxgb8elfrRW4G5d7",
   redirectUri: window.location.origin + "/login/callback",
   scopes: ["openid", "profile", "email", "offline_access"],
