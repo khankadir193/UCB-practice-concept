@@ -21,6 +21,8 @@ import { LoginCallback, Security } from "@okta/okta-react";
 import AnnouncementTab from "./AnnoucementComponent/AnnoucementComp";
 import { useCallback } from "react";
 import SignComponent from "./OktaAuthentication/SignComponent";
+import GenerateReportTable from "./PdfComponent/PdfTable";
+import GeneratePdf from "./PdfComponent/GeneratePdf";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
@@ -59,17 +61,20 @@ function App() {
       </BrowserRouter> */}
       {/* okta authentication */}
       {/* <BrowserRouter> */}
-        <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
-          <Routes>
-            <Route path="/" element={<HomeComponent />} />
-            <Route path="/login" element={<SignComponent />} />
+        {/* <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}> */}
+          {/* <Routes> */}
+            {/* <Route path="/" element={<HomeComponent />} /> */}
+            {/* <Route path="/login" element={<SignComponent />} /> */}
             {/* <Route path="/login/callback" element={<LoginCallback />} /> */}
             {/* <Route path="*" element={<Navigate to="/" />} />{" "} */}
             {/* Handles unknown routes */}
-          </Routes>
-        </Security>
+          {/* </Routes> */}
+        {/* </Security> */}
       {/* </BrowserRouter> */}
       {/* <AnnouncementTab /> */}
+
+      {/* <GenerateReportTable /> */}
+      <GeneratePdf />
     </div>
   );
 }
