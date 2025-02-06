@@ -23,6 +23,8 @@ import { useCallback } from "react";
 import SignComponent from "./OktaAuthentication/SignComponent";
 import GenerateReportTable from "./PdfComponent/PdfTable";
 import GeneratePdf from "./PdfComponent/GeneratePdf";
+import RefComponent from "./RefExample/RefComponent";
+import InputFocus from "./RefExample/InputFocus";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
@@ -74,7 +76,10 @@ function App() {
       {/* <AnnouncementTab /> */}
 
       {/* <GenerateReportTable /> */}
-      <GeneratePdf />
+      {/* <GeneratePdf /> */}
+      {/* ref example */}
+      {/* <RefComponent /> */}
+      <InputFocus />
     </div>
   );
 }
