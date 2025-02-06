@@ -25,6 +25,7 @@ import GenerateReportTable from "./PdfComponent/PdfTable";
 import GeneratePdf from "./PdfComponent/GeneratePdf";
 import RefComponent from "./RefExample/RefComponent";
 import InputFocus from "./RefExample/InputFocus";
+import ParentComponet from "./RefExample/ParentComponet";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
@@ -78,8 +79,9 @@ function App() {
       {/* <GenerateReportTable /> */}
       {/* <GeneratePdf /> */}
       {/* ref example */}
-      {/* <RefComponent /> */}
-      <InputFocus />
+      {/* <RefExample /> */}
+      {/* <InputFocus /> */}
+      <ParentComponet />
     </div>
   );
 }
