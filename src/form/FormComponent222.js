@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SectionTwo from "./SectionTwo";
-import ScheduleOfAccounts from "./ScheduleOfAccounts";
+import ScheduleOfAccounts from "./ScheduleOfAccount";
 import CollateralTable from "./CollateralTable";
 import {
   SCHEDULE_OF_ACCOUNTS_FORM_FIELDS,
