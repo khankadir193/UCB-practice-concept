@@ -27,6 +27,7 @@ import RefComponent from "./RefExample/RefComponent";
 import InputFocus from "./RefExample/InputFocus";
 import ParentComponet from "./RefExample/ParentComponet";
 import FormComponent from "./form/FormComponent";
+import FormComponent222 from "./form/FormComponent222";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
@@ -83,7 +84,7 @@ function App() {
       {/* <RefExample /> */}
       {/* <InputFocus /> */}
       {/* <ParentComponet /> */}
-      <FormComponent />
+      <FormComponent222 />
     </div>
   );
 }
