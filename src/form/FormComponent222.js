@@ -22,12 +22,18 @@ const FormComponent222 = () => {
   const validateForm = () => {
     let newErrors = {};
 
-    // SectionTwo Validation
-    if (!sectionTwo.relationship_name)
-      newErrors.relationship_name = "Relationship name is required";
-    if (!sectionTwo.bank) newErrors.bank = "Bank name is required";
-    if (!sectionTwo.report_date)
-      newErrors.report_date = "Report date is required";
+    // SectionTwo Borrower Details Validation
+    sectionTwo.borrower_details.forEach((borrower, index) => {
+      if (!borrower.borrower_name)
+        newErrors[`borrower_name_${index}`] = "Borrower name is required";
+      if (!borrower.port_number)
+        newErrors[`port_number_${index}`] = "Port number is required";
+      if (!borrower.naics_code)
+        newErrors[`naics_code_${index}`] = "NAICS code is required";
+      if (!borrower.business_description)
+        newErrors[`business_description_${index}`] =
+          "Business description is required";
+    });
 
     // ScheduleOfAccounts Validation
     scheduleOfAccounts.forEach((account, index) => {
@@ -45,7 +51,7 @@ const FormComponent222 = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log('getting error..')
+    console.log("getting error..");
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) {
@@ -58,7 +64,11 @@ const FormComponent222 = () => {
 
   return (
     <div className="form-container">
-      <SectionTwo sectionTwo={sectionTwo} setSectionTwo={setSectionTwo} errors={errors} />
+      <SectionTwo
+        sectionTwo={sectionTwo}
+        setSectionTwo={setSectionTwo}
+        errors={errors}
+      />
       <ScheduleOfAccounts
         scheduleOfAccounts={scheduleOfAccounts}
         setScheduleOfAccounts={setScheduleOfAccounts}
