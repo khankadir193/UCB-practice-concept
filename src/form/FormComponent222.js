@@ -7,6 +7,7 @@ import {
   COLLATERAL_TABLE_FORM_FIELDS,
   SECTION_TWO_FORM_FIELDS,
 } from "./formField";
+import FormFooter from "./FormFooter";
 
 const FormComponent222 = () => {
   const [sectionTwo, setSectionTwo] = useState(SECTION_TWO_FORM_FIELDS);
@@ -44,6 +45,7 @@ const FormComponent222 = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log('getting error..')
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) {
@@ -55,7 +57,7 @@ const FormComponent222 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <div className="form-container">
       <SectionTwo sectionTwo={sectionTwo} setSectionTwo={setSectionTwo} errors={errors} />
       <ScheduleOfAccounts
         scheduleOfAccounts={scheduleOfAccounts}
@@ -67,8 +69,8 @@ const FormComponent222 = () => {
         setCollateralTable={setCollateralTable}
         errors={errors}
       />
-      <button type="submit" className="submit-btn">Submit</button>
-    </form>
+      <FormFooter handleSubmit={handleSubmit} />
+    </div>
   );
 };
 
