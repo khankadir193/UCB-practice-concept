@@ -1,0 +1,463 @@
+@media (min-width: 992px) {
+  .main_wrapper aside {
+    height: 100%;
+    width: 6.25vw;
+    background: #05376f;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+  }
+
+  /* .relationship_table table tbody tr td button svg path,
+    .relationship_table table tbody td.action_col svg path {
+        fill: #acacac !important;
+    } */
+
+  /* .relationship_table table tbody tr td button svg path:hover,
+    .relationship_table table tbody td.action_col svg path:hover {
+        fill: red !important;
+    } */
+
+  .delete-btn-table svg path {
+    fill: #acacac;
+  }
+
+  .delete-btn-table:hover svg path {
+    fill: #c70808;
+  }
+
+  .edit-btn-table svg path {
+    fill: #acacac;
+  }
+
+  .edit-btn-table:hover svg path {
+    fill: #0E4F87;
+  }
+
+  table tbody tr:hover {
+    background: #f3f3f3;
+  }
+
+  .relationship_table input {
+    width: 19.323vw;
+    height: 2.552vw;
+    border-radius: 0.417vw;
+    padding: 0 0.521vw;
+    font-size: 0.729vw;
+    border: 0.052vw solid #e2e2e2;
+    outline: none;
+    padding-right: 2.604vw;
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col .chipselect .MuiSelect-select {
+    padding: 0 1.8vw 0 0.417vw !important;
+    height: 100%;
+        line-height: 2.604vw;
+    
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col .chipselect .MuiSelect-select .MuiBox-root{
+    height: 100%;
+    align-items: center;
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col .chipselect .MuiSelect-select .MuiBox-root .MuiChip-root.MuiButtonBase-root{
+    padding: 0 0 0 0.35vw;
+    top: unset !important;
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col .chipselect .MuiSelect-select .MuiBox-root .MuiChip-root.MuiButtonBase-root .MuiChip-label{
+    padding: 0 0.521vw 0 0;
+    line-height: 1.6vw !important;
+    height: 100%;
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col .chipselect .MuiSelect-select .MuiBox-root .MuiChip-root.MuiButtonBase-root svg{
+    margin: 0 2px 0 0;
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col .chipselect svg{
+    top: unset !important;
+  }
+
+  .relationship_table input:focus {
+    border: 0.05vw solid #acacac;
+  }
+
+  .count-pagination .MuiTablePagination-displayedRows,
+  .count-pagination .MuiTablePagination-actions {
+    display: none;
+  }
+
+  .number-pagination {
+    display: table;
+    margin: 0 auto 0;
+  }
+
+  .main-agination {
+    margin-top: 0.8vw;
+  }
+
+  .main-agination {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col {
+    flex: 0 0 15%;
+    max-width: 15%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .borrower_relationship_filter .text-danger {
+    font-size: 0.625vw;
+    position: absolute;
+    left: 0.26vw;
+    bottom: -1.042vw;
+  }
+
+  .select_location_dropdown .text-danger {
+    font-size: 0.625vw;
+    position: absolute;
+    left: 0.2vw;
+    bottom: -1.042vw;
+  }
+
+  .select_location_dropdown {
+    position: relative;
+  }
+
+  .text-danger.select-locationerr {
+    left: 0.7vw;
+  }
+
+  .select_location_dropdown.borrower_relationship_col.check-user-reviewd {
+    flex: 0 0 10%;
+    white-space: nowrap;
+    flex-direction: unset;
+    height: 2.604vw;
+    align-items: center;
+  }
+
+  .select_location_dropdown.borrower_relationship_col.check-user-reviewd .MuiButtonBase-root.MuiCheckbox-root{
+    padding: 0;
+  }
+
+  .select_location_dropdown.borrower_relationship_col.check-user-reviewd .MuiButtonBase-root.MuiCheckbox-root input{
+    height: unset;
+  }
+
+  .select_location_dropdown.borrower_relationship_col.check-user-reviewd .MuiButtonBase-root.MuiCheckbox-root svg{
+    width: 1.458vw;
+    height: 1.458vw;
+    margin-right: 0.256vw;
+  }
+
+  .create_relationship_button.borrower_relationship_col.add-user-btn {
+    flex: 0 0 8%;
+  }
+
+  .borrower_relationship_filter .borrower_relationship_col label {
+    display: inline;
+    width: max-content;
+  }
+
+  .MuiOutlinedInput-notchedOutline {
+    border-color: transparent;
+  }
+
+  /* .select__control:hover{
+        border-color: #aaa !important;
+      } */
+  .edit-permission-modal .select_input_car label {
+    color: #001E43 !important;
+    font-size: 0.781vw !important;
+    font-weight: 400 !important;
+  }
+
+  .edit-permission-modal .select_input_car input:disabled {
+    background: #e2e2e2;
+    border: 0.052vw solid #D0D0D0;
+  }
+
+  .full-flex {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .primary_btn.blue_btn.btn.primary-nonprimary-btns {
+    width: auto;
+    height: auto;
+    font-size: 0.938vw;
+    display: inline-block;
+  }
+
+  .primary_btn.blue_btn.btn.primary-nonprimary-btns {
+    width: auto;
+    height: auto;
+    font-size: 0.938vw;
+    display: inline-block;
+  }
+
+  .light_btn.blue_btn.btn.primary-nonprimary-btns {
+    width: auto;
+    height: auto;
+    font-size: 0.938vw;
+    display: inline-block;
+    background: #fff;
+    color: #0e4f87;
+    border-color: #0e4f87;
+    margin-left: 15px;
+
+  }
+
+  .form_btn_element .light_btn.blue_btn.btn.primary-nonprimary-btns::after {
+
+    background: #eaeaea;
+
+  }
+
+  /* Apply a max height for the dropdown and make it scrollable */
+  .menu-list-multidd {
+    max-height: 18vw;
+    /* Set your desired max height */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    margin-top: 200px;
+  }
+
+  /* Optionally style the menu items */
+  .menu-item-multidd {
+    max-height: 250px;
+    /* Set your desired max height for the menu list */
+    overflow-y: auto;
+    margin-top: 2.6vw !important;
+    /* Enable scrolling when the list exceeds the height */
+  }
+
+  .pd-b-0 {
+    padding-bottom: 0;
+  }
+
+  .manditory-star {
+    position: relative;
+    /* display: inline-block !important; */
+  }
+
+  .manditory-star::after {
+    content: "*";
+    position: absolute;
+    top: 0vw;
+    right: -0.521vw;
+    display: block;
+    color: #c70808;
+  }
+
+  #menu- .MuiList-root .filter_menu_item.Mui-selected svg {
+    color: #224f85;
+  }
+
+  .check-user-reviewd svg {
+    color: #224f85;
+  }
+
+  .Toastify__toast.error-pop::before {
+    content: '';
+    height: 100%;
+    width: 0.938vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #c41313;
+    display: block;
+  }
+
+  /* CSS for sticky header with border-bottom */
+  .relationship_table .MuiTableHead-root {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    border-bottom: 0.104vw solid #e0e0e0;
+    /* Border-bottom for sticky header */
+  }
+
+  /* Optional: Add some padding to the table container */
+  .relationship_table {
+    padding-top: 0;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 0px;
+    z-index: 12;
+    padding: 0.3vw 0.625vw;
+    top: 0;
+    cursor: pointer;
+    color: #224f85;
+    transition: 0.5s ease;
+    top: 0.8vw;
+  }
+
+  .search-icon svg {
+    font-size: 2vw !important;
+  }
+
+  .search-icon:hover {
+    transform: scale(1.2);
+    transition: 0.5s ease;
+  }
+
+  .animate-icon {
+    animation: searchClickAnimation 0.5s ease-in-out;
+  }
+
+  /* Define the animation keyframes */
+  @keyframes searchClickAnimation {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+      /* Grow the icon slightly */
+    }
+
+    100% {
+      transform: scale(1);
+      /* Return to original size */
+    }
+  }
+
+  .select-name .select__input-container {
+    margin-top: -1.3vw !important;
+  }
+
+
+
+
+  .lbl-checkbox {
+    cursor: pointer;
+    margin: 0 !important;
+  }
+
+  .select__single-value {
+    font-size: 13px;
+  }
+
+  .relationship_table_header.relationship_table.user_permission_table.table-head-with-search {
+    padding-top: 0.729vw;
+  }
+
+  .number-pagination li button {
+    font-size: 0.725vw !important;
+    height: 1.667vw !important;
+    width: 1.667vw !important;
+    min-width: unset !important;
+    padding: unset !important;
+    margin: 0 0.156vw;
+  }
+
+  .number-pagination li button svg{
+    width: 1.458vw !important;
+    height: 1.458vw !important;
+  }
+
+  .count-pagination p {
+    font-size: 0.725vw !important;
+  }
+
+  .count-pagination{
+    position: absolute;
+    right: 0;
+  }
+
+  .count-pagination .MuiTablePagination-root{
+    overflow: unset !important;
+  }
+
+  .count-pagination .MuiTablePagination-root .MuiTablePagination-toolbar{
+    padding-left: 0 !important;
+    min-height: 100% !important;
+  }
+
+  .count-pagination .MuiTablePagination-root .MuiTablePagination-toolbar .MuiTablePagination-input{
+    margin: 0 !important;
+  }
+
+  .count-pagination .MuiTablePagination-root .MuiTablePagination-toolbar .MuiInputBase-root .MuiTablePagination-select{
+    padding: 0 0.833vw 0 0.425vw !important;
+    height: unset !important;
+  }
+
+  .count-pagination .MuiTablePagination-root .MuiTablePagination-toolbar .MuiInputBase-root svg{
+    height: 1.458vw !important;
+    width: 1.458vw !important;
+    top: unset !important;
+    right: -0.521vw;
+  }
+
+  .delete-cross {
+    font-size: 1.3vw !important;
+  }
+
+  .select-name .select__input-container input {
+    font-size: 0.781vw !important;
+    margin-top: 1vw !important;
+  }
+
+  .select__placeholder {
+    color: rgb(170, 170, 170) !important;
+  }
+
+  /* #search-select {
+    padding-left: 0.417vw !important;
+  } */
+
+  .MuiOutlinedInput-notchedOutline {
+    border: transparent !important;
+  }
+
+  /* .no-magin {
+    margin: 0 !important;
+  } */
+
+  .text-danger.user-reviewed-err {
+    left: 0.8vw;
+  }
+}
+
+::-webkit-scrollbar {
+  height: 0.208vw;
+  /* height of horizontal scrollbar ← You're missing this */
+  width: 0.208vw;
+  /* width of vertical scrollbar */
+  border: 0.052px solid #d5d5d5;
+  position: relative;
+  top: 20px;
+}
+
+@media (max-width: 1280px){
+  .user_permission_main{
+    -ms-zoom: 0.9;
+    zoom: 0.9;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+  .select-name .select__input-container input {
+    margin-top: 0 !important;
+    height: 2vw;
+  }
+
+  .select-name .select__input-container {
+    margin-top: 0 !important;
+    height: 2vw;
+  }
+
+  .main-agination {
+    margin-top: 0.3vw;
+}
+}

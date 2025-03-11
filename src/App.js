@@ -28,6 +28,8 @@ import InputFocus from "./RefExample/InputFocus";
 import ParentComponet from "./RefExample/ParentComponet";
 import FormComponent from "./form/FormComponent";
 import FormComponent222 from "./form/FormComponent222";
+import { PaginationComponent22 } from "./Pagination/PaginationComponent22 ";
+import PaginatedTable from "./Pagination/PaginatedTable";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
@@ -85,7 +87,9 @@ function App() {
       {/* <InputFocus /> */}
       {/* <ParentComponet /> */}
       {/* <FormComponent222 /> */}
-      <FormComponent />
+      {/* <FormComponent /> */}
+      {/* <PaginationComponent22 /> */}
+      <PaginatedTable />
     </div>
   );
 }
