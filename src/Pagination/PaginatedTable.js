@@ -71,7 +71,7 @@ export const PaginatedTable = () => {
     const paginatedRows = rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
     return (
-        <div>
+        <>
             <table>
                 <thead>
                     <tr>
@@ -102,7 +102,7 @@ export const PaginatedTable = () => {
                 rowsPerPage={rowsPerPage}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
             />
-        </div>
+        </>
     );
 };
 
