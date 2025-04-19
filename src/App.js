@@ -31,6 +31,7 @@ import FormComponent222 from "./form/FormComponent222";
 import { PaginationComponent22 } from "./Pagination/PaginationComponent22 ";
 import PaginatedTable from "./Pagination/PaginatedTable";
 import ParentRefComponent from "./ForwardRefExample/ParentRefComponet";
+import CounterExample from "./ReducerHook/CounterExample";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
@@ -91,7 +92,8 @@ function App() {
       {/* <FormComponent /> */}
       {/* <PaginationComponent22 /> */}
       {/* <PaginatedTable /> */}
-      <ParentRefComponent />
+      {/* <ParentRefComponent /> */}
+      <CounterExample />
     </div>
   );
 }
