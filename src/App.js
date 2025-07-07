@@ -32,6 +32,7 @@ import { PaginationComponent22 } from "./Pagination/PaginationComponent22 ";
 import PaginatedTable from "./Pagination/PaginatedTable";
 import ParentRefComponent from "./ForwardRefExample/ParentRefComponet";
 import CounterExample from "./ReducerHook/CounterExample";
+import MainGameContainer from "./PingPongGame/MainGameContainer";
 // import oktaConfig from "./OktaAuthentication/oktaConfig";
 
 const oktaAuth = new OktaAuth({
@@ -93,7 +94,8 @@ function App() {
       {/* <PaginationComponent22 /> */}
       {/* <PaginatedTable /> */}
       {/* <ParentRefComponent /> */}
-      <CounterExample />
+      {/* <CounterExample /> */}
+      <MainGameContainer />
     </div>
   );
 }
